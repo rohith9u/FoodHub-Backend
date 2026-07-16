@@ -1,0 +1,529 @@
+{
+  "info": {
+    "_postman_id": "e028a1df-713d-4164-ae0b-53b0dfdf91c8",
+    "name": "FoodHub_Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56054339",
+    "_collection_link": "https://go.postman.co/collection/56054339-e028a1df-713d-4164-ae0b-53b0dfdf91c8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Restaurants",
+      "item": [
+        {
+          "name": "Create Restaurant",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Pavitra\",\r\n    \"city\":\"Hyderabad\",\r\n    \"description\":\"Famous Biryani\",\r\n    \"cuisine\":[\"Indian\",\"Chinese\"],\r\n    \"isVeg\":false,\r\n    \"categoryId\":\"6a54ec968436c6424a7e5508\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/restaurants",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Restaurant",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/restaurants?city=Hyderabad&isVeg=false",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants"
+              ],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Hyderabad"
+                },
+                {
+                  "key": "isVeg",
+                  "value": "false"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/restaurants/6a54f7b670e90d47eefd3e9e",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "6a54f7b670e90d47eefd3e9e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Hotel Paradise\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/restaurants/6a54f7b670e90d47eefd3e9e",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "6a54f7b670e90d47eefd3e9e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/restaurants/6a564ecaf738a769c737677f",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "6a564ecaf738a769c737677f"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Categories",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Cafe\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCategories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/categories/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getCategoryByID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/categories/6a5853bef56716c5ba60832f",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "6a5853bef56716c5ba60832f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateCategories",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Cafes\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/6a5853bef56716c5ba60832f",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "6a5853bef56716c5ba60832f"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteCategories",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/6a54ec968436c6424a7e5508",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "6a54ec968436c6424a7e5508"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getRestaurantsByCategory",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/categories/Indian/restaurants",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "Indian",
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Menus",
+      "item": [
+        {
+          "name": "createMenus",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Chicken Noodles\",\r\n    \"description\":\"Chicken with noodles\",\r\n    \"price\":300,\r\n    \"availability\":\"Available\",\r\n    \"restaurantId\":\"6a54f7b670e90d47eefd3e9e\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/menus",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "menus"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMenu",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/menus",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "menus"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getMenuById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Chicken Noodles\",\r\n    \"description\":\"Chicken with noodles\",\r\n    \"price\":300,\r\n    \"availability\":\"Available\",\r\n    \"restaurantId\":\"6a54f7b670e90d47eefd3e9e\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/menus/6a5856801e12ae094dc4347c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "menus",
+                "6a5856801e12ae094dc4347c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateMenu",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\":\"Chicken with noodles\",\r\n    \"price\":200,\r\n    \"availability\":\"Available\",\r\n    \"restaurantId\":\"6a54f7b670e90d47eefd3e9e\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/menus/6a5856801e12ae094dc4347c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "menus",
+                "6a5856801e12ae094dc4347c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteMenu",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\":\"Chicken with noodles\",\r\n    \"price\":200,\r\n    \"availability\":\"Available\",\r\n    \"restaurantId\":\"6a54f7b670e90d47eefd3e9e\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/menus/6a5856801e12ae094dc4347c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "menus",
+                "6a5856801e12ae094dc4347c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "createReview",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\":\"Nice Food\",\r\n    \"rating\":4,\r\n    \"restaurantId\":\"6a54f7b670e90d47eefd3e9e\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/reviews/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "reviews",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getReview",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "getReviewsByRestaurantId",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/reviews/restaurant/6a54f7b670e90d47eefd3e9e",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "reviews",
+                "restaurant",
+                "6a54f7b670e90d47eefd3e9e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateEeview",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\":\"Nice Food with great service\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/reviews/6a585b2091e6b40b25113f01",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "reviews",
+                "6a585b2091e6b40b25113f01"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteReview",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment\":\"Nice Food with great service\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/reviews/6a585b2091e6b40b25113f01",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "reviews",
+                "6a585b2091e6b40b25113f01"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

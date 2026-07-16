@@ -1,0 +1,55 @@
+import mongoose from 'mongoose'
+const statsSchema=mongoose.Schema({
+    "totalReviews":{type:Number,
+        default:0
+    },
+    "avg_rating":{
+        type:Number,
+        default:0
+    },
+    "menuItems":{
+        type:Number,
+        default:0
+    }
+})
+const restaurantSchema=mongoose.Schema({
+    name:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    city:{
+        type:String,
+        required:true,
+        trim:true
+    },
+    description:{
+        type:String,
+        maxlength:100
+    },
+    cuisines:{
+        type:[String],
+        default:[]
+    },
+    isVeg:{
+        type:Boolean,
+        required:true
+    },
+    categoryId:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'Category'
+    },
+    stats:{type:statsSchema,
+        default:{}
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now
+    },
+    isDeleted:{
+        type:Boolean,
+        default:false
+    }
+});
+export const Restaurant=mongoose.model('Restaurant',restaurantSchema);
