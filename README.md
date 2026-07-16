@@ -181,7 +181,7 @@ Restaurant (1) ───────▶ (Many) Reviews
 ## ⚙ Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/rohith9u/FoodHub-Backend.git
 
 cd FoodHub-Backend
 
